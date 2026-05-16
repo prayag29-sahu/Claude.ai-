@@ -426,10 +426,10 @@ If you're a recruiter, developer, or someone curious about AI-assisted developme
 
 | Platform | Link |
 |----------|------|
-| 🌐 Portfolio | *(https://prayagsahu.vercel.app)* |
-| 💼 LinkedIn | *(https://www.linkedin.com/in/prayag-sahu29/)* |
-| 🐙 GitHub | *(https://github.com/prayag29-sahu)* |
-| 📧 Email | *(sahuprayag229@gmail.com) |
+| 🌐 Portfolio | *https://prayagsahu.vercel.app* |
+| 💼 LinkedIn | *https://www.linkedin.com/in/prayag-sahu29* |
+| 🐙 GitHub | *https://github.com/prayag29-sahu* |
+| 📧 Email | *sahuprayag229@gmail.com |
 
 ---
 
