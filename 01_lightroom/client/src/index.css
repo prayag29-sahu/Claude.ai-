@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { cursor: none !important; }
+  html { scroll-behavior: smooth; }
+  body { background: #0a0a0a; color: #f0ebe3; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #c6a55c; }
+  ::selection { background: rgba(198,165,92,0.3); }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-black px-8 py-3 text-xs tracking-widest uppercase font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(198,165,92,0.35)] inline-block;
+  }
+  .btn-outline {
+    @apply border border-white/30 text-cream px-8 py-3 text-xs tracking-widest uppercase transition-all duration-300 hover:border-gold hover:text-gold inline-block;
+  }
+  .btn-gold-outline {
+    @apply border border-gold text-gold px-8 py-3 text-xs tracking-widest uppercase transition-all duration-300 hover:bg-gold hover:text-black inline-block;
+  }
+  .section-label {
+    @apply text-gold text-[0.65rem] tracking-[0.3em] uppercase mb-3 block;
+  }
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight;
+  }
+  .divider {
+    @apply w-14 h-px bg-gold my-5;
+  }
+  .form-input {
+    @apply w-full bg-dark border border-border text-cream px-4 py-3 text-sm outline-none focus:border-gold transition-colors duration-300 font-sans;
+  }
+  .form-label {
+    @apply text-gold text-[0.65rem] tracking-widest uppercase mb-1.5 block;
+  }
+  .card-dark {
+    @apply bg-card border border-border;
+  }
+  .gold-italic {
+    @apply font-serif italic text-gold;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet { background: #444 !important; }
+.swiper-pagination-bullet-active { background: #c6a55c !important; width: 24px !important; border-radius: 3px !important; }
+.swiper-button-next::after, .swiper-button-prev::after { color: #c6a55c !important; font-size: 18px !important; }
