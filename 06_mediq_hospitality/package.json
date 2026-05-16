@@ -1,0 +1,14 @@
+{
+  "name": "mediq-pro",
+  "version": "2.0.0",
+  "description": "MedIQ Pro – Production Healthcare Decision Intelligence Platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --names \"API,WEB\" --prefix-colors \"cyan,magenta\" \"npm run dev --prefix backend\" \"npm start --prefix frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm start --prefix frontend",
+    "setup": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "seed": "npm run seed --prefix backend"
+  },
+  "devDependencies": { "concurrently": "^8.2.2" }
+}
