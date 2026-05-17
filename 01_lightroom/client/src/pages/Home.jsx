@@ -45,7 +45,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.4 }}
             className="flex gap-4 justify-center flex-wrap">
             <Link to="/portfolio" className="btn-primary">View Portfolio</Link>
-            <Link to="/booking" className="btn-outline">Book Now</Link>
+            <Link to="/contact" className="btn-outline">Get a Quote</Link>
           </motion.div>
         </div>
 
@@ -72,13 +72,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <RevealOnScroll direction="left">
             <div className="relative">
-              <div className="w-full h-[550px] overflow-hidden bg-gradient-to-br from-[#1c1408] to-[#2a1c08] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(198,165,92,0.1)_20px,rgba(198,165,92,0.1)_40px)]" />
+              <div className="w-full relative overflow-hidden bg-gradient-to-br from-[#1c1408] to-[#2a1c08]">
+                <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(198,165,92,0.1)_20px,rgba(198,165,92,0.1)_40px)] pointer-events-none" />
 
-                <img src="/photoshoot/2.jpg" alt="" />
+                <img src="/photoshoot/2.jpg" alt="About Studio" className="w-full h-auto object-cover relative z-10 block" />
               </div>
-              <div className="absolute inset-[-12px] border border-gold/15 pointer-events-none" />
-              <div className="absolute bottom-[-1.5rem] right-[-1.5rem] w-24 h-24 rounded-full bg-gold flex flex-col items-center justify-center">
+              <div className="absolute inset-[-12px] border border-gold/15 pointer-events-none z-0" />
+              <div className="absolute bottom-[-1.5rem] right-[-1.5rem] w-24 h-24 rounded-full bg-gold flex flex-col items-center justify-center z-20 shadow-xl">
                 <span className="font-serif text-2xl text-black leading-none">10</span>
                 <span className="text-[0.5rem] text-black uppercase tracking-wide text-center leading-tight">Years of<br/>Excellence</span>
               </div>
@@ -155,8 +155,8 @@ export default function Home() {
           </h2>
           <p className="text-grey-light text-sm mb-10">Where Light Meets Emotion · Premium Photography Studio</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link to="/booking" className="btn-primary">Book a Consultation</Link>
-            <a href="tel:+919876543210" className="btn-outline">Call Us Now</a>
+            <Link to="/contact" className="btn-primary">Get a Quote</Link>
+            <a href="tel:+919109422772" className="btn-outline">Call Us Now</a>
           </div>
         </RevealOnScroll>
       </section>

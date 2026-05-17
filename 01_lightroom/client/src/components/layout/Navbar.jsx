@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { useAuth } from '../../context/AuthContext'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -10,15 +9,13 @@ const links = [
   { to: '/services', label: 'Services' },
   { to: '/videos', label: 'Films' },
   { to: '/pricing', label: 'Pricing' },
-  { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
-  const { user, logout } = useAuth()
-  const { pathname } = useLocation()
+  const [open, setOpen]         = useState(false)
+  const { pathname }            = useLocation()
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -37,6 +34,7 @@ export default function Navbar() {
           The <span className="text-gold italic">Lightroom</span>
         </Link>
 
+        {/* Desktop Links */}
         <ul className="hidden lg:flex items-center gap-8">
           {links.map(l => (
             <li key={l.to}>
@@ -50,29 +48,25 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Desktop CTA – Contact (Login/Signup hidden but not removed) */}
         <div className="hidden lg:flex items-center gap-3">
-          {user ? (
-            <>
-              <Link to={user.role === 'admin' ? '/admin/dashboard' : '/client/dashboard'}
-                className="text-[0.7rem] tracking-widest uppercase text-gold border border-gold px-4 py-2 hover:bg-gold hover:text-black transition-all duration-300">
-                Dashboard
-              </Link>
-              <button onClick={logout} className="text-[0.7rem] tracking-widest uppercase text-grey-light hover:text-gold transition-colors">
-                Logout
-              </button>
-            </>
-          ) : (
-            <Link to="/booking" className="text-[0.72rem] tracking-[0.15em] uppercase border border-gold text-gold px-5 py-2.5 hover:bg-gold hover:text-black transition-all duration-300">
-              Book Now
-            </Link>
-          )}
+          {/* Auth buttons intentionally hidden for public-facing mode */}
+          {/* <Link to="/client/login" className="...">Login</Link> */}
+          <Link
+            to="/contact"
+            className="text-[0.72rem] tracking-[0.15em] uppercase border border-gold text-gold px-5 py-2.5 hover:bg-gold hover:text-black transition-all duration-300"
+          >
+            Get a Quote
+          </Link>
         </div>
 
+        {/* Mobile hamburger */}
         <button onClick={() => setOpen(!open)} className="lg:hidden text-cream">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -87,7 +81,7 @@ export default function Navbar() {
               </motion.div>
             ))}
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-              <Link to="/booking" onClick={() => setOpen(false)} className="btn-primary mt-4">Book Now</Link>
+              <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary mt-4">Get a Quote</Link>
             </motion.div>
           </motion.div>
         )}

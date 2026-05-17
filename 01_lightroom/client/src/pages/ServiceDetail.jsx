@@ -19,9 +19,9 @@ const serviceData = {
 }
 
 const packages = [
-  { name: 'Essential', price: '29,999', features: ['8 Hours Coverage','1 Photographer','200 Edited Photos','Online Gallery','15-Day Delivery'] },
-  { name: 'Premium', price: '59,999', featured: true, features: ['Full Day Coverage','2 Photographers','500+ Edited Photos','Cinematic Film','Drone Shots','Printed Album','10-Day Delivery'] },
-  { name: 'Luxury', price: '99,999', features: ['Multi-Day Coverage','3 Photographers + Team','Unlimited Photos','Full Cinema Film','Drone + Gimbal','Luxury Album','Pre-Wedding Shoot','7-Day Delivery'] },
+  { name: 'Silver', price: '35,000', features: ['2-Day Coverage','Traditional Video','Traditional Photo','Haldi + Wedding','200 Photos Album','30 Sheets 12×18'] },
+  { name: 'Gold', price: '90,000', featured: true, features: ['3-Day Coverage','Candid Photography','Cinematography','Reels Maker','200 Photos Album','Teaser + Highlight Film'] },
+  { name: 'Platinum', price: '1,80,000', features: ['Pre-Wedding + 3-Day','Drone Coverage','Candid + Cine + Reels','220 Photos Album','40 Sheets 16×24','2 Albums NTR'] },
 ]
 
 export default function ServiceDetail() {
@@ -39,7 +39,7 @@ export default function ServiceDetail() {
             <h1 className="section-title mb-4">{service.title}</h1>
             <div className="divider mx-auto" />
             <p className="text-grey-light text-sm leading-relaxed max-w-2xl mx-auto">{service.desc}</p>
-            <Link to="/booking" className="btn-primary mt-8 inline-block">Book This Service</Link>
+            <Link to="/contact" className="btn-primary mt-8 inline-block">Get a Quote</Link>
           </RevealOnScroll>
         </div>
       </div>
@@ -74,9 +74,9 @@ export default function ServiceDetail() {
                     <li key={f} className="text-grey-light text-xs flex items-center gap-2"><span className="text-gold">—</span>{f}</li>
                   ))}
                 </ul>
-                <Link to="/booking" className={`w-full block text-center py-2.5 text-[0.7rem] tracking-widest uppercase transition-all duration-300 border ${
+                <Link to="/pricing" className={`w-full block text-center py-2.5 text-[0.7rem] tracking-widest uppercase transition-all duration-300 border ${
                   pkg.featured ? 'bg-gold border-gold text-black hover:opacity-90' : 'border-border text-grey-light hover:border-gold hover:text-gold'
-                }`}>Book Now</Link>
+                }`}>See Full Package</Link>
               </div>
             ))}
           </div>
